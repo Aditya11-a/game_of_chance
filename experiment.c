@@ -18,11 +18,8 @@ int main(){
     fd = open(FILENAME,O_RDWR|O_CREAT|O_APPEND,0600);
     if(fd == -1)
         fatal(" while opening the file\n");
-    int a = write(fd,&cr.userid,4);
+    int a = write(fd,&cr,sizeof(CREDIT));
     if( a == -1)
-        fatal("error while writing to the file\n");
-    a = write(fd,&cr.credits,4);
-    if(a == -1)
         fatal("error while writing to the file\n");
     close(fd);
     printf("updated\n");
