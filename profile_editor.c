@@ -15,7 +15,7 @@ PLAYER firsttime(int userid){  //if the user is logining for the first time crea
     if(fd == -1)
         fatal("error while opening the file in firsttime");
     if(suid(userid,fd)){
-        printf("welcome user %d ",userid);
+        printf("welcome! again user %d ",userid);
         rchecker= read(fd,&pinfo.userid,sizeof(pinfo.userid));
         if(rchecker == -1)
             fatal("while loading player info");
