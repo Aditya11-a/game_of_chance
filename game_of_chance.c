@@ -21,7 +21,6 @@ int main(){
     if(scanf("%d",&game)==0){
         while(getchar() != '\n');
         printf("enter a valid input");
-
     }
     else {
     if(game == 1){

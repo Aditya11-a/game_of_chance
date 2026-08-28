@@ -11,8 +11,8 @@ void pick_a_number(){
     printf("You will choose a no. between 1 to 20 and then computer will give a random no.\n");
     printf("If they matches you will win 100 credits else you will loose 10 wagered credits.\n");
     printf("Press Y if you accept the terms and anything else to go back\n");
-    input= getchar();
-    getchar();
+    scanf(" %c",&input);
+    printf("%c",input);
     if(input == 'Y' || input == 'y'){
         printf("enter your no.\n");
         scanf("%d",&playerno);
