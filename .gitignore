@@ -1,0 +1,15 @@
+# Ignore compiled executable files (they have no extension in Linux)
+game_of_chance
+a.out
+nohup.out
+
+# Ignore object files generated during compilation
+*.o
+
+# Ignore the player database! 
+# (You don't want to upload real user data to GitHub)
+player_info
+
+# Ignore core crash dumps (from Segmentation Faults)
+core
+core.*

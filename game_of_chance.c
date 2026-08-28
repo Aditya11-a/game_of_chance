@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "error.h"
 #include "sturcts.h"
 #include "function.h"
-#define FILENAME "player_info"
 
 
 PLAYER playerinfo;
@@ -29,12 +27,12 @@ int main(){
     if(game == 1){
         pick_a_number();
     }
-    else if(game == 2){
+    /*else if(game == 2){
         dealer_no_match();
     }
     else if(game == 3){
         find_the_ace();
-    }
+    }*/
     else if(game == 4){
         idfinder(playerinfo.userid,playerinfo.credits);
     } 

@@ -4,10 +4,11 @@
 #include <stdlib.h>
 #include "error.h"
 #include "sturcts.h"
-#define FILENAME "playe_info"
+#define FILENAME "player_info"
 
 
 int suid(int,int);
+void crupdater(int, int );
 PLAYER firsttime(int userid){  //if the user is logining for the first time create his profile else load his info. 
     int fd , wchecker, rchecker;
     PLAYER pinfo;

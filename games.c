@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "sturcts.h"
-#include "error.h"
+#include "function.h"
 #include <time.h>
 
 void pick_a_number(){
@@ -30,5 +30,7 @@ void pick_a_number(){
     }
 
 }
+
+
 
 
