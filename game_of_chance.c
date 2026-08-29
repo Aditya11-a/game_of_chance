@@ -26,10 +26,10 @@ int main(){
     if(game == 1){
         pick_a_number();
     }
-    /*else if(game == 2){
+    else if(game == 2){
         dealer_no_match();
     }
-    else if(game == 3){
+    /*else if(game == 3){
         find_the_ace();
     }*/
     else if(game == 4){

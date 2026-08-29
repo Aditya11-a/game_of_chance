@@ -32,5 +32,29 @@ void pick_a_number(){
 }
 
 
+void dealer_no_match(){
+
+}
+
+
+int wager(){
+    int wager = 0;
+    while(wager != -1){
+    printf("Enter the no. of credits you want to wager or -1 to go back.\n It should  belong to (0,your credits]\n");
+    if(scanf(" %d",&wager) == 0)
+        while(getchar() != EOF){
+            ;
+        }
+    if(wager > 0 && wager< playerinfo.credits)
+        return wager;
+    else if(wager == -1)
+        return -1;
+    else
+        printf("Enter a valid amount.\n");
+}
+
+}
+
+
 
 
