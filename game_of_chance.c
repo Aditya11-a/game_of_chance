@@ -1,13 +1,17 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <time.h>
+#include <stdlib.h>
 #include "sturcts.h"
 #include "function.h"
+
 
 
 PLAYER playerinfo;
 
 int main(){
+    srand(time(0));
     int logpid, game = 0;
     logpid= getuid();
     playerinfo=firsttime(logpid);
@@ -29,9 +33,9 @@ int main(){
     else if(game == 2){
         dealer_no_match();
     }
-    /*else if(game == 3){
+    else if(game == 3){
         find_the_ace();
-    }*/
+    }
     else if(game == 4){
         idfinder(playerinfo.userid,playerinfo.credits);
     } 

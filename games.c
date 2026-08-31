@@ -16,7 +16,6 @@ void pick_a_number(){
     if(input == 'Y' || input == 'y'){
         printf("enter your no.\n");
         scanf("%d",&playerno);
-        srand(time(0));
         generatedno = rand()%20 +1;
         printf("computer generated no. %d\n",generatedno);
         if(generatedno == playerno){
@@ -35,7 +34,6 @@ void pick_a_number(){
 void dealer_no_match(){
     int wagered =0,i,j,duplicate_checker=0;
     int numbers[16];
-    srand(time(0));
     puts("Rules:");
     puts("You will choose a amount to wager.");
     puts("the dealer generates exactly 16 random numbers.Each no. should be between 0 and 99. All the nos. will be printed on the screen.");
@@ -71,6 +69,58 @@ void dealer_no_match(){
     
 }
 
+void find_the_ace(){
+    int wagered = 0,ace_position,i,d;
+    int guess=-1;
+    char position[4];
+    for(i=0;i<4;i++){
+        position[i]='X';
+        if(i==3)
+            position[i]=0; 
+    }
+    puts("The Dealer will shuffle three cards. 1 ACE and 2 QUEENS.");
+    puts("You have to guesse what is the position of ACE.");
+    puts("If you guess right you win and your wagered amount will added to your credit balance.");
+    puts("If you lost your wagered amount will be subtracted from your balance.");
+    wagered = wager();
+    if(wagered != -1){
+        for(i=0;i<3;i++){
+            printf("[%c]\t",position[i]);
+        }
+        putchar('\n');
+        puts("Guesse the position of ACE");
+        while(guess <=0 || guess>=4){
+        if((d=scanf(" %d",&guess))==0){
+            while(getchar()!= '\n');
+            puts("enter valid input");
+            continue;
+        }
+        else if(guess <=0 || guess>=4)
+            puts("enter a valid no.");
+    }
+        ace_position=rand()%3;
+        for(i=0;i<3;i++){
+            if(i == ace_position)
+                position[i]='A';
+            else
+                position[i]='Q';
+            printf("[%c]\t",position[i]);
+        }
+        putchar('\n');
+        if((guess-1)==ace_position){
+             puts("You win.");
+             playerinfo.credits += wagered;
+        }
+        else{
+            puts("You lost.");
+            playerinfo.credits -= wagered;
+        }
+    
+}
+else
+        ;
+
+}
 
 int wager(){
     int wager = 0;
