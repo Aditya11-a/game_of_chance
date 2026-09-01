@@ -70,7 +70,7 @@ void dealer_no_match(){
 }
 
 void find_the_ace(){
-    int wagered = 0,ace_position,i,d;
+    int wagered = 0,ace_position,i,d,replay=-1;
     int guess=-1;
     char position[4];
     for(i=0;i<4;i++){
@@ -84,6 +84,14 @@ void find_the_ace(){
     puts("If you lost your wagered amount will be subtracted from your balance.");
     wagered = wager();
     if(wagered != -1){
+        while(replay !=0){
+        for(i=0;i<4;i++){
+        position[i]='X';
+        if(i==3)
+            position[i]=0; 
+    }
+        replay =-1;
+        guess = -1;
         for(i=0;i<3;i++){
             printf("[%c]\t",position[i]);
         }
@@ -115,6 +123,20 @@ void find_the_ace(){
             puts("You lost.");
             playerinfo.credits -= wagered;
         }
+        putchar('\n');
+        puts("Do you want to play again with double wager. 1 to play 0 to exit.");
+        while(replay>1 || replay <0){
+            if(scanf(" %d",&replay)!=1){
+            while(getchar()!= '\n');
+        }
+    }
+    if(replay==1){
+        if((wagered<<1)>playerinfo.credits)
+            puts("You don't have much credit to wager");
+        else
+            wagered<<=1;
+        }
+    }
     
 }
 else
